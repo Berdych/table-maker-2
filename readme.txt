@@ -1,5 +1,3 @@
-# table-maker-2
-
 === Table Maker ===
 Contributors: wpsoul
 Tags: responsive tables, pricing tables, comparison tables, wordpress tables, table maker, top list table, pricing table maker, table generator, price comparison
