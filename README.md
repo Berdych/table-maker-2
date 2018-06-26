@@ -1,6 +1,5 @@
-# table-maker-2
+# Table Maker 2
 
-=== Table Maker ===
 Contributors: wpsoul
 Tags: responsive tables, pricing tables, comparison tables, wordpress tables, table maker, top list table, pricing table maker, table generator, price comparison
 Donate link: https://wpsoul.com/
@@ -12,12 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Create awesome responsive comparison tables.
 
-== Description ==
+###Description
 Plugin helps you to create different comparison tables. It has some unique functions which allow you to use plugin to create different type of awesome tables: comparison tables, TOP tables, specification tables, etc. Table looks awesome with adding data as rows and as columns.
 
 [Demo of some tables of plugin](https://wpsoul.com/responsive-comparison-table-wordpress/)
 
-**Features:**
+##Features:
 
 *   Responsive option (stacks)
 *   Predefined icons
@@ -35,15 +34,15 @@ Plugin helps you to create different comparison tables. It has some unique funct
 > <strong>Additional functions</strong><br>
 >Our themes have some additional functions for plugin: buttons, text highlights, countdown, option to hide values from non logged users. 
 >
->Check our theme if you need [best moneymaking solutions](http://themeforest.net/item/rehub-directory-shop-coupon-affiliate-theme/7646339 "Rehub theme").
+>Check our theme if you need [best moneymaking solutions](http://themeforest.net/item/rehub-directory-shop-coupon-affiliate-theme/7646339?ref=Berdych).
 
-**How it works:**
+##How it works:
 
 [youtube https://www.youtube.com/watch?v=Z4r6TzWv8gU]
 
 If you like this plugin please give it a good rating.
 
-== Installation ==
+###Installation
 1. Use WordPress' plugin installer to install the plugin.
 2. Go to the admin panel and click on the Table Maker menu item.
 3. To create your first table click on the 'Add New' button.
@@ -51,13 +50,13 @@ If you like this plugin please give it a good rating.
 
 NOTICE. Before installing ver. 1.9.2.  If you have old tables you can export them from ver. 1.9 and import to ver. 1.9.2 one by one.
 
-== Screenshots ==
+###Screenshots
 
 1. Overview of interface
 2. Table example
 3. How it looks on mobile
 
-== Changelog ==
+###Changelog
 
 = 1.9.2 =
 * Fixed problem with Maria DB
