@@ -56,6 +56,9 @@ If you like this plugin please give it a good rating.
 
 ### Changelog
 
+= 1.9.3 =
+* Added checkbox option for MS Exel CSV files.
+
 = 1.9.2 =
 * Fixed problem with Maria DB
 
