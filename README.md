@@ -36,7 +36,7 @@ Plugin helps you to create different comparison tables. It has some unique funct
 
 ## How it works:
 
-[Domonsstartion on YouTube](https://www.youtube.com/watch?v=Z4r6TzWv8gU)
+[YouTube Demonstration](https://www.youtube.com/watch?v=Z4r6TzWv8gU)
 
 If you like this plugin please give it a good rating.
 
@@ -47,12 +47,6 @@ If you like this plugin please give it a good rating.
 4. Once the table is ready add it to any post or page using the `[wpsm_comparison_table id="1"]` shortcode.
 
 **NOTICE**. Before installing ver. 1.9.2.  If you have old tables you can export them from ver. 1.9 and import to ver. 1.9.2 one by one.
-
-### Screenshots
-
-1. Overview of interface
-2. Table example
-3. How it looks on mobile
 
 ### Changelog
 
