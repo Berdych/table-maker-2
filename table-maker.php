@@ -3,7 +3,7 @@
 Plugin Name: Table Maker (NEW)
 Plugin URI: https://wordpress.org/plugins/table-maker/
 Description: Create tables with just a few clicks. Compatible with Maria DB.
-Version: 1.9.2
+Version: 1.9.3
 Author: Wpsoul
 Author URI: https://wpsoul.com
 License: GPL2
@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 require_once plugin_dir_path( __FILE__ ) . 'inc/class-wpsm-table-maker.php';
 
 function wpsm_run_table_maker() {
-	$plugin_instance = new WPSM_Table_Maker('1.9.2');
+	$plugin_instance = new WPSM_Table_Maker('1.9.3');
 	register_activation_hook( __FILE__, array($plugin_instance, 'initialize') );
 	register_uninstall_hook( __FILE__, array('WPSM_Table_Maker', 'rollback') );
 }

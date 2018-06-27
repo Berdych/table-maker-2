@@ -22,7 +22,6 @@ class WPSM_Table_Maker
 		add_action('admin_menu', array($this, 'add_menu_items'));
 		add_action('admin_enqueue_scripts', array($this, 'backend_enqueue'));
 		add_action('current_screen', array($this, 'handle_requests'));
-		//add_action('current_screen', array($this, 'xml_download'));
 		add_action('admin_notices', array($this, 'admin_notices') );
 		add_shortcode('wpsm_comparison_table', array($this, 'comparison_table_callback'));
 		add_action('init', array($this, 'wpsm_table_frontend_scripts') );
@@ -248,6 +247,7 @@ class WPSM_Table_Maker
 						<option value=","><?php _e('"," (comma)', 'wpsm-tableplugin') ;?></option>
 						<option value=";"><?php _e('";" (semi-colon)', 'wpsm-tableplugin') ;?></option>
 					</select>
+					<input type="checkbox" id="wpsm-mse" name="mse_csv" class="wpsm-checkbox"><label for="wpsm-mse"> <?php _e('MS CSV', 'wpsm-tableplugin'); ?></label>
 				</p>
 			</form>			
 			<?php endif; ?>				
@@ -298,13 +298,16 @@ class WPSM_Table_Maker
 	}
 
 	public function handle_requests($current_screen) {
+		
 		$user_caps = apply_filters('wpsmt_user_cappabilities', $this->user_caps);
+		
 		if(current_user_can($user_caps) && $current_screen->base == 'toplevel_page_wpsm_table_maker') { //Check if user have enough rights (min. author role by default)
 			if(!$this->is_plugin_page())
 				return;
 
 			if(isset($_GET['action2']) && $_GET['action2'] != -1 && $_GET['action'] == -1)
 				$_GET['action'] = $_GET['action2'];
+			
 			//Add a new table from the table list
 			if($_GET['action'] == 'add' && isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce'], 'add_table') && isset($_POST['wpsm-create-table'])){
 				if (!isset ($_POST['table_respon'])) {$_POST['table_respon'] = '';}
@@ -363,8 +366,9 @@ class WPSM_Table_Maker
 				}
 			}
 			//Add table with importing CSV file
-			if(isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce'], 'add_table') && isset($_POST['wpsm-import-csv'])) {
-				if(is_uploaded_file($_FILES['upload_file']['tmp_name']) && $_FILES['upload_file']['type'] == 'text/csv' && isset($_POST['csv_delimiter'])) {
+			if($_GET['action'] == 'add' && isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce'], 'add_table') && isset($_POST['wpsm-import-csv'])) {
+				$file_type = $_POST['mse_csv'] ? 'application/octet-stream' : 'text/csv';
+				if(is_uploaded_file($_FILES['upload_file']['tmp_name']) && $_FILES['upload_file']['type'] == $file_type && isset($_POST['csv_delimiter'])) {
 					if (($handle = fopen($_FILES['upload_file']['tmp_name'], "r")) !== FALSE) {
 						$array =  csv2array( $handle, $_POST['csv_delimiter'] );
 					fclose($handle); 
